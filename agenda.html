@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./js/scriptAgenda.js"></script>
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Css-->
+     <title>Be fit</title>
+  </head>
+  <body>
+      <!--Inicia Nav-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="agenda.html">Comidas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calculadora.html">IMC</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  
+    <main>
+    <h1> Registro de comidas</h1>
+    <h2> Las comidas registradas de <span id='usuarioNombre'> invitado/a</span> son: </h2>
+   
+	<div class="comidas">
+		<div class="mb-3 ">
+            <div id="registroComidas">Registro de comidas</div>
+	</div>
+</main>  
+<div class="row gx-0">
+  <footer class="row py-2 col-sm-12 col-md-12 col-lg-12 "id="footer">
+        <h2 class="title2 text-center bg-animacion"> Seguinos en nuestras redes</h2>
+         <div class="col-sm-12 col-md-12 col-lg-4 text-center"> <a href=" https://facebook.com" target="_blank"> <img src=" img/facebook.png" alt= "seguinos en facebook" class="footer__icon--md"> </a> </div>
+         <div class="col-sm-12 col-md-12 col-lg-4 text-center"> <a href=" https://instagram.com" target="_blank"> <img src=" img/instagram.png" alt= "seguinos en instagram" class="footer__icon--md"></a> </div>
+         <div class="col-sm-12 col-md-12 col-lg-4 text-center"> <a href=" https://twitter.com" target="_blank"> <img src="img/twitter.png" alt= "seguinos en twitter" class="footer__icon--md"> </a> </div>
+        <p class="footerText text-center"> © 2022 Be fit. Todos los derechos reservados. </p>
+  </footer>
+      </div>
+  <!-- Cierra footer--> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
