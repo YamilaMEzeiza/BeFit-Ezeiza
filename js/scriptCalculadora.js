@@ -1,27 +1,20 @@
 function calculadora(peso,altura){
     let resultado=parseInt(peso/(altura*altura));
     let calculo= document.getElementById('calculo');
-    calculo.innerText=resultado;
+    let calculoNuevo=resultado;
+    calculo.innerText=calculoNuevo;
 }
 
-function imc() {
-	let respuesta = "si";
-	let respuestaUsuario = prompt("¿Querés calcular tu indice de masa corporal?");
+function calcularImc() {
 
-	if (respuestaUsuario === respuesta) {
-		let peso = prompt("Ingresa tu peso");
-		let altura = prompt("Ingresa tu altura");
+		let peso = document.getElementById('peso').value;
+		let altura =document.getElementById('altura').value;
 		calculadora(peso, altura);
-	} else {
-		alert("Continua disfrutando de Be Fit");
-	}
+        imcResultado();
+        
 }
+btnCalculo.addEventListener('click',calcularImc)
 
-imc();
-
-
-/*
-No logro que me funcione
 function imcResultado(){
     let bajo=18.5;
     let saludable=18.6;
@@ -29,13 +22,17 @@ function imcResultado(){
     let obesidad= 30;
     
     if(calculadora <=bajo){
-        return alert( 'Su IMC se encuentra dentro del rango de peso insuficiente');
+        let resultadoNuevo=document.getElementById('resultadoNuevo');
+        let resultadoFinal= 'Su IMC se encuentra dentro del rango de peso insuficiente';
     }else if(calculadora>=saludable){
-alert('Su IMC se encuentra dentro del rango de peso normal o saludable');
+        let resultadoNuevo=document.getElementById('resultadoNuevo');
+        let resultadoFinal='Su IMC se encuentra dentro del rango de peso normal o saludable';
     }else if(calculadora>=sobrepeso){
-        alert('Su IMC se encuentra dentro del rango de sobrepeso.');
+        let resultadoNuevo=document.getElementById('resultadoNuevo');
+        let resultadoFinal='Su IMC se encuentra dentro del rango de sobrepeso.';
     }else{
-        alert (' Su IMC se encuentra dentro del rango de obesidad.');
+        let resultadoNuevo=document.getElementById('resultadoNuevo');
+        let resultadoFinal=' Su IMC se encuentra dentro del rango de obesidad.';
     }
     }
-    imcResultado();*/
+    
