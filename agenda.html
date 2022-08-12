@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script src="./js/scriptAgenda.js"></script>
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--Css-->
@@ -38,12 +37,20 @@
   
     <main>
     <h1> Registro de comidas</h1>
-    <h2> Las comidas registradas de <span id='usuarioNombre'> invitado/a</span> son: </h2>
    
-	<div class="comidas">
-		<div class="mb-3 ">
-            <div id="registroComidas">Registro de comidas</div>
-	</div>
+    <div id="crearRegistro">
+      <div id="nuevoRegistro">
+          <h3>Ingrese fecha y lo que comió</h3>
+          <textarea name="registroNuevo" id="registroNuevo" placeholder="Registre sus comidas aqui "></textarea><br>
+          <input type="button" value="Agregar registro" id="boton_registro_nuevo" class="botones">
+      </div>
+
+      <div id="mostrar_registros">  
+        <h2> Las comidas registradas de <span id='usuarioNombre'> invitado/a</span> son: </h2>
+          <input type="button" value="Borrar todos los registros" id="borrar" class="botones" >
+          <div id="registrosGuardados"></div>
+      </div>
+  </div>
 </main>  
 <div class="row gx-0">
   <footer class="row py-2 col-sm-12 col-md-12 col-lg-12 "id="footer">
@@ -56,5 +63,6 @@
       </div>
   <!-- Cierra footer--> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./js/scriptAgenda.js"></script>
 </body>
 </html>

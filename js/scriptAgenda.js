@@ -1,37 +1,60 @@
-let usuarioNombre = document.getElementById('usuarioNombre');
-let nuevoNombre = prompt('Ingresá tu nombre');
-usuarioNombre.innerText=nuevoNombre;
+
+let registros = [];
+let registrosGuardados = document.getElementById("registrosGuardados");
+let registroStorage = localStorage.getItem("registros");
+
+const agregarRegistro = () => {
+    let registro =  document.getElementById("registroNuevo");
+    if (registro.value === "") {
+        alert("No ingreses un registro vacío");
+    } else {
+        registros.push(registro.value);
+        console.log('Array registro',registros);
+        crearRegistro(registro.value);    
+        guardarLocalStorage(registros);
+        registro.value = "";
+    };
+};
 
 
-/*const registroComidas =
-registroComidas.push({ desayuno:'Té con galletas', almuerzo: 'Fideos con Manteca', merienda:'Pan con manteca',cena:'carne con pure',dia:5, mes:7});
-alert('Realiza tu registro de comidas ingresando los siguientes datos:')
-let desayuno= prompt('Ingresá tu desayuno');
-let almuerzo= prompt('Ingresá tu almuerzo');
-let merienda= prompt('Ingresa tu merienda');
-let cena= prompt('Ingresá tu cena');
-let dia= parseInt(prompt('Ingresá el dia'));
-let mes=parseInt(prompt('Ingresa el mes en número'));
+const crearRegistro = (texto) => {
+    let nuevoRegistro = document.createElement("p");
+    let div_registro = document.createElement("div");
+    div_registro.className = "registro";
+    nuevoRegistro.innerText = texto;
+    div_registro.appendChild(nuevoRegistro);
+    registrosGuardados.appendChild(div_registro);
+   
+;
+      };
+      let buttonAgregar = document.getElementById("boton_registro_nuevo");
+      buttonAgregar.addEventListener("click", agregarRegistro);
 
-let registroUsuario = { desayuno,almuerzo,merienda,cena,dia,mes }
+const borrarTodosRegistros = () => {
+    registrosGuardados.querySelectorAll("*").forEach(registro => registro.remove());
+    localStorage.removeItem("registros");
+    registros = [];
+    console.log('Los registros guardados han sido borrados');
+};
+let buttonBorrar= document.getElementById("borrar");
+      buttonBorrar.addEventListener("click", borrarTodosRegistros);
 
-registroComidas.push(registroUsuario);
-console.log(registroComidas);
-for (const registro of registroComidas) {
-    registro.dia = registro.dia;
-    alert('Su ultimo registro de comidas del dia ' + registro.dia+ ' del mes ' + registroComidas.mes+' '+'y los datos brindados fueron'+' '+registro.desayuno+' '+ registro.almuerzo+' '+registro.merienda+' '+registro.cena);
-}*/
+const guardarLocalStorage = (registro_a_guardar) => {
+    if (registroStorage == null) {
+        localStorage.setItem("registro", JSON.stringify(registro_a_guardar));    
+    } else {
+        localStorage.setItem("registro", JSON.stringify(registro));
+    };
+};
 
-/*let usuarioNombre= document.getElementById('usuarioNombre');
-let nuevoUsuario=prompt('Ingrese su nombre');
-usuarioNombre.innerHTML = nuevoUsuario;*/
-
-/*let registroComidas= [{ desayuno:'Café con leche', almuerzo: 'Fideos con Manteca', merienda:'Pan con manteca',cena:'Sopa',dia:1,mes:7 },{ desayuno:'Café con leche', almuerzo: 'Ensalada', merienda:'Yogurt',cena:'Sopa',dia:2, mes: 7 },
-{ desayuno:'Café con leche', almuerzo: 'Fideos con tuco', merienda:'Pan con manteca',cena:'Sopa',dia:3, mes:7},
-{ desayuno:'Café con leche', almuerzo: 'Fideos con Manteca', merienda:'Pan con manteca',cena:'carne con papas',dia:4, mes: 7  }]
-
-let newDiv = document.createElement("div");
-    document.comidas.appendChild(newDiv);
-    newDiv.innerHTML='<div id="registroComidas">Registro de comidas  (prompt("Ingresá lo que comiste")) </div>';*/
+if (registroStorage != null) {
+    registroStorage = JSON.parse(registroStorage);
+    console.log('registroStorage', registroStorage);
+    
+   registros = registroStorage;
+    registros.forEach(parrafo => {
+        crearRegistro(parrafo);
+    });
+};
 
     
