@@ -45,14 +45,14 @@
               <legend class="calculadora">Calculadora de indice de masa corporal </legend>
               <label for="peso" class="formulario">Peso </label>
               <br>
-              <input type= "number" name= "peso" id= "peso" placeholder= "Ingresá tu peso">
+              <input value="" type="number" step="any" name= "peso" id= "peso" placeholder= "Ingresá tu peso">
               <br>
               <label for= "altura"class="formulario"> Altura </label> 
               <br>
-              <input type="text" name="altura" id="altura" placeholder="Ingresá tu altura en metros">
+              <input value="" type="number" step="any" name="altura" id="altura" placeholder="Ingresá tu altura en metros">
               </fieldset>
               
-      <button type="click" class="btn btnCalculo btn-primary mb-2">Calcular</button>
+      <button type="click" class="btn  btn-primary mb-2"id="btnSwal">Calcular</button>
     </form>
   
     <p>Tu indice de masa corporal es:<span id="calculo">%</span></p>
@@ -69,6 +69,7 @@
       </div>
   <!-- Cierra footer--> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./js/scriptCalculadora.js"></script>
 </body>
 </html>

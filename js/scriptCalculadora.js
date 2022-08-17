@@ -1,3 +1,4 @@
+const btnSwal=document.getElementById('btnSwal');
 function calculadora(peso,altura){
     let resultado=parseInt(peso/(altura*altura));
     let calculo= document.getElementById('calculo');
@@ -5,15 +6,35 @@ function calculadora(peso,altura){
     calculo.innerText=calculoNuevo;
 }
 
-function calcularImc() {
 
-		let peso = document.getElementById('peso').value;
-		let altura =document.getElementById('altura').value;
-		calculadora(peso, altura);
-        imcResultado();
-        
-}
-btnCalculo.addEventListener('click',calcularImc)
+btnSwal.addEventListener('click', () => {
+let peso = document.getElementById('peso').value;
+let altura =document.getElementById('altura').value;
+let timerInterval
+Swal.fire({
+  title: 'Calculando tu indice de masa corporal',
+  html: 'Tu resultado estará en <b></b> milisegundos',
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+ 
+  if (result.dismiss === Swal.DismissReason.timer) {
+    calculadora();
+imcResultado();
+  }
+})
+
+})
 
 function imcResultado(){
     let bajo=18.5;
