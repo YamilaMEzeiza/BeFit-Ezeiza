@@ -14,7 +14,7 @@ let timerInterval
 Swal.fire({
   title: 'Calculando tu indice de masa corporal',
   html: 'Tu resultado estará en <b></b> milisegundos',
-  timer: 2000,
+  timer: 10000,
   timerProgressBar: true,
   didOpen: () => {
     Swal.showLoading()

@@ -38,7 +38,7 @@ const borrarTodosRegistros = () => {
 btnSwal.onclick = () => {
 Swal.fire({
     title: '¿Estás seguro de que quieres borrar todos los registros?',
-    text: "¡No podrás revertir esta acción",
+    text: "¡No podrás revertir esta acción!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -47,7 +47,7 @@ Swal.fire({
   }).then((result) => {
     if (result.isConfirmed) {
       Swal.fire(
-        borrarTodosRegistros
+        borrarTodosRegistros()
       )
     }
   })  };
