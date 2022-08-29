@@ -13,7 +13,7 @@
   <body>
       <!--Inicia Nav-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+      <div class="container-fluid" id="botonera">
         <a class="navbar-brand" href="index.html">Inicio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -21,42 +21,39 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="agenda.html">Comidas</a>
+              <a class="nav-link active" aria-current="page" href="agenda.html">Registro de comidas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="calculadora.html">IMC</a>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
         </div>
       </div>
     </nav>
   
     <main>
+      
     <h1> Be fit!</h1>
     <h2> ¿Querés saber cual es tu indice de masa corporal? ¡Averigualo acá!</h2>
     <form class="form-inline calculadoraFormulario">
-      <div class="form-group mb-2">
+      <div class="form-group mb-2 formularioFondo">
           <form action= "envio.php" method= "post"> 
             <fieldset> 
               <legend class="calculadora">Calculadora de indice de masa corporal </legend>
               <label for="peso" class="formulario">Peso </label>
               <br>
-              <input value="" type="number" step="any" name= "peso" id= "peso" placeholder= "Ingresá tu peso">
+              <input type="text"  name= "peso" id= "peso" placeholder= "Ingresá tu peso">
               <br>
               <label for= "altura"class="formulario"> Altura </label> 
               <br>
-              <input value="" type="number" step="any" name="altura" id="altura" placeholder="Ingresá tu altura en metros">
+              <input type="text" name="altura" id="altura" placeholder="Ingresá tu altura en metros">
               </fieldset>
               
       <button type="click" class="btn  btn-primary mb-2"id="btnSwal">Calcular</button>
     </form>
-  
     <p>Tu indice de masa corporal es:<span id="calculo">%</span></p>
-    <p>Resultado:<span id="resultadoFinal">%</span></p> </p>
+    <p>Resultado:<span id="resultadoFinal">%</span></p> 
+  </div>
 </main>  
 <div class="row gx-0">
   <footer class="row py-2 col-sm-12 col-md-12 col-lg-12 "id="footer">

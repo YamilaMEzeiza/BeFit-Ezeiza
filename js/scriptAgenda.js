@@ -21,10 +21,12 @@ const agregarRegistro = () => {
 const crearRegistro = (texto) => {
     let nuevoRegistro = document.createElement("p");
     let div_registro = document.createElement("div");
+    
     div_registro.className = "registro";
     nuevoRegistro.innerText = texto;
     div_registro.appendChild(nuevoRegistro);
     registrosGuardados.appendChild(div_registro); 
+
       };
       let buttonAgregar = document.getElementById("boton_registro_nuevo");
       buttonAgregar.addEventListener("click", agregarRegistro);

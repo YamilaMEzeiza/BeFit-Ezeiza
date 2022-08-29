@@ -1,5 +1,8 @@
+
 const btnSwal=document.getElementById('btnSwal');
-function calculadora(peso,altura){
+const calculadora=()=>{
+  let peso = parseInt(document.getElementById('peso').value);
+let altura =parseInt(document.getElementById('altura').value)
     let resultado=parseInt(peso/(altura*altura));
     let calculo= document.getElementById('calculo');
     let calculoNuevo=resultado;
@@ -8,12 +11,10 @@ function calculadora(peso,altura){
 
 
 btnSwal.addEventListener('click', () => {
-let peso = document.getElementById('peso').value;
-let altura =document.getElementById('altura').value;
 let timerInterval
 Swal.fire({
   title: 'Calculando tu indice de masa corporal',
-  html: 'Tu resultado estará en <b></b> milisegundos',
+  html: 'Tu resultado estará muy pronto',
   timer: 10000,
   timerProgressBar: true,
   didOpen: () => {
@@ -29,8 +30,8 @@ Swal.fire({
 }).then((result) => {
  
   if (result.dismiss === Swal.DismissReason.timer) {
-    calculadora();
-imcResultado();
+    calculadora()
+    imcResultado()
   }
 })
 
@@ -42,13 +43,13 @@ function imcResultado(){
     let sobrepeso= 25;
     let obesidad= 30;
     
-    if(calculadora <=bajo){
+    if(calculadora() <=bajo){
         let resultadoNuevo=document.getElementById('resultadoNuevo');
         let resultadoFinal= 'Su IMC se encuentra dentro del rango de peso insuficiente';
-    }else if(calculadora>=saludable){
+    }else if(calculadora()>=saludable){
         let resultadoNuevo=document.getElementById('resultadoNuevo');
         let resultadoFinal='Su IMC se encuentra dentro del rango de peso normal o saludable';
-    }else if(calculadora>=sobrepeso){
+    }else if(calculadora()>=sobrepeso){
         let resultadoNuevo=document.getElementById('resultadoNuevo');
         let resultadoFinal='Su IMC se encuentra dentro del rango de sobrepeso.';
     }else{
