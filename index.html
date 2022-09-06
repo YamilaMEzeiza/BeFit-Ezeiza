@@ -27,10 +27,7 @@
               <a class="nav-link" href="calculadora.html">IMC</a>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
+          
         </div>
       </div>
     </nav>
@@ -42,12 +39,41 @@
     <div class="busqueda">
           <label for="buscaNombre">Buscar por nombre</label>
           <input type="text" name="" class="inputBusqueda" id="nombre">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
       </div>
     </div>
-    <div class="catalogoTarjetas card-group d-block ">
-
-
-    </div>
+    
+    <div class="row row-cols-1 row-cols-md-2 g-4 h-40 ms-4 me-4 mt-5 mb-4 productosItems"  >
+  </div>
+</div>
+  
+    <section class="carrito ms-4 mb-4 me-4 mt-4">
+      <div id="container">
+          <h1 class="text-center">CARRITO</h1>
+          <hr>
+          <div class="row">
+              <div class="col-6">
+                  <div class="carrito-header">
+                      <h6>Producto</h6>
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="carrito-header">
+                      <h6 class="text-truncate">Precio</h6>
+                  </div>
+              </div>
+              <div class="col-4">
+                  <div class="carrito-header">
+                      <h6>Cantidad</h6>
+                  </div>
+              </div>
+          </div>
+         
+          <div class="itemCarrito" id="carritoContainer">
+          </div>
+          <p class="precio">Precio total: $<span id="precioTotal">0</span></p>
+          <button id="vaciarCarrito" class="boton-agregar">Vaciar carrito</button>
+          <button class="comprar"id="btnSwal"> Comprar </button>
   </div>
   </main>  
 <div class="row gx-0">

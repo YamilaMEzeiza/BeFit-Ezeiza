@@ -19,13 +19,15 @@ const agregarRegistro = () => {
 
 
 const crearRegistro = (texto) => {
-    let nuevoRegistro = document.createElement("p");
     let div_registro = document.createElement("div");
-    
+    let card = document.createElement("card");
+    let nuevoRegistro = document.createElement("p");
     div_registro.className = "registro";
     nuevoRegistro.innerText = texto;
     div_registro.appendChild(nuevoRegistro);
     registrosGuardados.appendChild(div_registro); 
+    registrosGuardados.appendChild(card); 
+
 
       };
       let buttonAgregar = document.getElementById("boton_registro_nuevo");
@@ -35,7 +37,6 @@ const borrarTodosRegistros = () => {
     registrosGuardados.querySelectorAll("*").forEach(registro => registro.remove());
     localStorage.removeItem("registros");
     registros = [];
-    console.log('Los registros guardados han sido borrados');
 };
 btnSwal.onclick = () => {
 Swal.fire({

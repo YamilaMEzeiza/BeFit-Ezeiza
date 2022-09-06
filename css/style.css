@@ -14,17 +14,23 @@ body{
         color: #F9F4FA;
         cursor: pointer; }
   
-  .btn {
+  .btn ,
+  .button{
     text-decoration: none;
     font-size: 1.5rem;
     color: #F9F4FA;
     font-family: "Rancho", cursive;
     font-weight: 400;
-    background-color: #8114A5; }
+    background-color: #8114A5; 
+  align-items: center;}
     h1 {
         font-size: 4rem;
         font-family: "Righteous", cursive;
-        color: #E0DECA; }
+        color: #E0DECA; 
+        text-align: center;
+        text-shadow:black;
+        background-color:rgba(34, 141, 20, 0.5);
+      }
       
       p {
         font-family: "Rancho", cursive;
@@ -35,6 +41,7 @@ body{
         padding: 1em; }
 #footer {
     background-color: #aef89f; }
+  
   
   .footerText {
     font-family: "Rancho", cursive;
@@ -51,3 +58,7 @@ body{
     background-color:  rgba(34, 141, 20, 0.5);
   
     }
+    .carrito{
+      background-color:rgba(34, 141, 20)
+    }
+    
