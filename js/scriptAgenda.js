@@ -1,7 +1,7 @@
 
 let registros = [];
 let registrosGuardados = document.getElementById("registrosGuardados");
-let registroStorage = localStorage.getItem("registros");
+let registroStorage = localStorage.getItem("registro");
 const btnSwal=document.getElementById('btnSwal');
 
 const agregarRegistro = () => {

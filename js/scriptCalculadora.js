@@ -15,13 +15,14 @@ const calculadora = (e) => {
   console.log(altura, peso);
   if (resultado <= bajo) {
     mensaje = "Su IMC se encuentra dentro del rango de peso insuficiente";
-  } else if (resultado >= saludable) {
+  } else if (resultado >= saludable && resultado< sobrepeso) {
     mensaje = "Su IMC se encuentra dentro del rango de peso normal o saludable";
-  } else if (resultado >= sobrepeso) {
+  } else if (resultado >= sobrepeso&& resultado< obesidad) {
     mensaje = "Su IMC se encuentra dentro del rango de sobrepeso.";
   } else {
     mensaje = " Su IMC se encuentra dentro del rango de obesidad.";
   }
+  console.log(resultado)
   // let calculoNuevo=resultado;
 
   console.log(resultado, mensaje);
