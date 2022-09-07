@@ -11,42 +11,40 @@
      <title>Be fit</title>
   </head>
   <body>
-      <!--Inicia Nav-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid"id="botonera">
-        <a class="navbar-brand" href="index.html">Inicio</a>
+      
+     <!--Inicia Nav-->
+    <!--Inicia Nav-->
+    <nav class="navbar navbar-expand-lg navbar-light  bg-purple" id="botonera">
+      <div class="container-fluid"> <a class="navbar-brand" href="index.html"> <h1> BeFit!</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="agenda.html">Registro de comidas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="calculadora.html">IMC</a>
-            </li>
-          </ul>
-          
-        </div>
+          </button>
       </div>
-    </nav>
+         
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Tienda</a> </li>
+         <li class="nav-item"> <a class="nav-link active" aria-current="page" href="agenda.html">Registro de comidas</a> </li>
+         <li class="nav-item"> <a class="nav-link active" href="calculadora.html">Calculadora de IMC</a></li>
+     </div>
+   </div>
+ </nav>
   <main>
     <div class="bg-green" >
-    <h1> Be fit!</h1>
-    <p> En Be fit! podrás calcular tu indice de masa corporal, llevar un registro de tus comidas e ¡incluso podrás comprar productos de nuestra tienda saludable!</p>
-    <h2 id="principal"> Comprá en nuestra tienda de productos saludables</h2>
-    <div class="busqueda">
-          <label for="buscaNombre">Buscar por nombre</label>
-          <input type="text" name="" class="inputBusqueda" id="nombre">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </div>
+    <h2> Tienda saludable</h2>
+    <p class="colorTexto"> En Be fit! podrás calcular tu indice de masa corporal, llevar un registro de tus comidas e ¡incluso podrás comprar productos de nuestra tienda saludable!</p>
     </div>
+    <div class="tienda ">
+    <h3 id="principal" class="colorTexto text-center"> Comprá en nuestra tienda de productos saludables</h3>  
     
-    <div class="row row-cols-1 row-cols-md-2 g-4 h-40 ms-4 me-4 mt-5 mb-4 productosItems"  >
+    <div class="busqueda ">
+      <label for="buscaNombre" class="colorTexto ">Buscar por nombre</label>
+      <input type="text" name="" class="inputBusqueda " id="nombre">
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4 h-40 ms-4 me-4 mt-5 mb-4 productosItems"  >
   </div>
 </div>
-  
+</div>
     <section class="carrito ms-4 mb-4 me-4 mt-4">
       <div id="container">
           <h1 class="text-center">CARRITO</h1>
@@ -54,17 +52,17 @@
           <div class="row">
               <div class="col-6">
                   <div class="carrito-header">
-                      <h6>Producto</h6>
+                      <h3 class="colorTexto">Producto</h3>
                   </div>
               </div>
               <div class="col-2">
                   <div class="carrito-header">
-                      <h6 class="text-truncate">Precio</h6>
+                      <h3 class="text-truncate colorTexto">Precio</h3>
                   </div>
               </div>
               <div class="col-4">
                   <div class="carrito-header">
-                      <h6>Cantidad</h6>
+                      <h3 class="colorTexto">Cantidad</h3>
                   </div>
               </div>
           </div>
@@ -72,8 +70,8 @@
           <div class="itemCarrito" id="carritoContainer">
           </div>
           <p class="precio">Precio total: $<span id="precioTotal">0</span></p>
-          <button id="vaciarCarrito" class="boton-agregar">Vaciar carrito</button>
-          <button class="comprar"id="btnSwal"> Comprar </button>
+          <button id="vaciarCarrito" class="boton-agregar botones">Vaciar carrito</button>
+          <button class="comprar botones"id="btnSwal"> Comprar </button>
   </div>
   </main>  
 <div class="row gx-0">

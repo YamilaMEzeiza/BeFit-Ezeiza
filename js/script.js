@@ -1,45 +1,40 @@
-const tiendaOnline=[];
+let productosItems=document.querySelector(".productosItems")
+let carrito= [];
+const carritoContenedor=document.getElementById("carritoContainer")
+const vaciarCarrito= document.getElementById("vaciarCarrito")
+const precioTotal= document.getElementById("precioTotal")
+const btnSwal=document.getElementById('btnSwal');const tiendaOnline=[];
 const url='../tienda/productos.json'
-    fetch(url)
-.then(response=> response.json() .then(data=>{
-    mostrarProductos(data)
-    tiendaOnline.push(...data)
-    }))
+ //Fetch de los productos
+fetch(url)
+    .then(response=> response.json() .then(data=>{
+        mostrarProductos(data)
+        tiendaOnline.push(...data)
+        }))
 function mostrarProductos(data) {
     for(const productos of data)  {
         let productosPlantilla= document.createElement("div");
         productosPlantilla.className = 'card ';
         productosPlantilla.id = `${productos.id}`;
         productosPlantilla.innerHTML=` 
-        <div class="col">
-        <h3 class="card-header">${productos.producto}</h3>
-        <div class="card-body">
-        <img src=${productos.imagen} class="card-img-top w-25 imagenProducto" alt="${productos.producto}">
-            <span id="precio">$ ${productos.precio}</span>
+         <div class="col ">
+         <h3 class="card-header colorTexto">${productos.producto}</h3>
+         <div class="card-body">
+         <img src=${productos.imagen} class="card-img-top w-25 imagenProducto" alt="${productos.producto}">
+         <span id="precio" class="colorTexto">$ ${productos.precio}</span>
+          </div>
+          <div class="card-footer"> <button class="btn-primary botones"id="agregar${productos.id}">Agregar al carrito</button>
             </div>
-            <div class="card-footer"> <button class="btn btn-primary"id="agregar${productos.id}">Agregar al carrito</button>
-            </div>
-            </div>
-            `;
+         </div>  `;
            
-            productosItems.appendChild(productosPlantilla);
-      const botonAgregar=document.getElementById(`agregar${productos.id}`)
-      botonAgregar.addEventListener('click',() =>{
+    productosItems.appendChild(productosPlantilla);
+    const botonAgregar=document.getElementById(`agregar${productos.id}`)
+    botonAgregar.addEventListener('click',() =>{
         agregarCarrito(productos.id)
     })
       }
 }
-let productosItems=document.querySelector(".productosItems")
-const carritoContenedor=document.getElementById("carritoContainer")
-const vaciarCarrito= document.getElementById("vaciarCarrito")
-const precioTotal= document.getElementById("precioTotal")
-const btnSwal=document.getElementById('btnSwal');
-
-let carrito= [];
-vaciarCarrito.addEventListener("click",()=>{
-    carrito.length=0
-    carritoActual()
-})
+ //Local Storage
 document.addEventListener("DOMContentLoaded",()=>{
 if(localStorage.getItem("carrito")){
     carrito=JSON.parse(localStorage.getItem("carrito"))
@@ -47,7 +42,7 @@ if(localStorage.getItem("carrito")){
 }
 })
 
- 
+  //Agregar un producto al carrito
 const agregarCarrito= (productId)=>{
     const existe=carrito.some(product=> product.id === productId)
     if(existe){
@@ -71,7 +66,7 @@ const divNuevo= document.createElement("div")
 <div class="row ">
       <div class="col-6">
           <div class= "d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-              <h6 class="text-truncate ml-3 mb-0">${product.producto}</h6>
+              <h3 class="text-truncate ml-3 mb-0">${product.producto}</h3>
           </div>
       </div>
       <div class="col-2">
@@ -97,12 +92,18 @@ const divNuevo= document.createElement("div")
 })
 precioTotal.innerText= carrito.reduce((acc,product)=>acc+ product.precio,0)
 }
+ //Eliminar producto del carrito
 const eliminarDelCarrito=(productId)=>{
     const itemProducto= carrito.find((product)=>product.id === productId)
 const indice=carrito.indexOf(itemProducto)
 carrito.splice(indice,1)
 carritoActual()}
-
+ //Vaciar todo el carrito
+ vaciarCarrito.addEventListener("click",()=>{
+    carrito.length=0
+    carritoActual()
+})
+ //Boton de SweetAlert
 btnSwal.onclick = () => {
     Swal.fire({
         title: '¿Comprar este carrito?',
@@ -121,13 +122,10 @@ btnSwal.onclick = () => {
         }
       })  };
 
-    
-
-
-
+     //Funcion para buscar un producto
 function eventoSearch(){
     let busqueda = document.getElementById('nombre');
-busqueda.addEventListener('keyup',()=>{
+    busqueda.addEventListener('keyup',()=>{
     const buscarElemento=[];
     buscarElemento.splice(0)
     productosItems.innerHTML=""
@@ -141,4 +139,4 @@ busqueda.addEventListener('keyup',()=>{
     }
     mostrarProductos(buscarElemento)
 })}
-eventoSearch()
+    eventoSearch()

@@ -3,7 +3,7 @@ let registros = [];
 let registrosGuardados = document.getElementById("registrosGuardados");
 let registroStorage = localStorage.getItem("registro");
 const btnSwal=document.getElementById('btnSwal');
-
+ //Agregar un registro
 const agregarRegistro = () => {
     let registro =  document.getElementById("registroNuevo");
     if (registro.value === "") {
@@ -17,27 +17,28 @@ const agregarRegistro = () => {
     };
 };
 
-
+ //Crear un registro
 const crearRegistro = (texto) => {
     let div_registro = document.createElement("div");
-    let card = document.createElement("card");
     let nuevoRegistro = document.createElement("p");
-    div_registro.className = "registro";
+    div_registro.className = "registro tarjeta mt-4 mb-4";
     nuevoRegistro.innerText = texto;
     div_registro.appendChild(nuevoRegistro);
+    
     registrosGuardados.appendChild(div_registro); 
-    registrosGuardados.appendChild(card); 
 
 
       };
+       //Boton para agregar  registro
       let buttonAgregar = document.getElementById("boton_registro_nuevo");
       buttonAgregar.addEventListener("click", agregarRegistro);
-
+ //Borrar todos los registros
 const borrarTodosRegistros = () => {
     registrosGuardados.querySelectorAll("*").forEach(registro => registro.remove());
     localStorage.removeItem("registros");
     registros = [];
 };
+ //Alerta con sweetAlert
 btnSwal.onclick = () => {
 Swal.fire({
     title: '¿Estás seguro de que quieres borrar todos los registros?',
@@ -55,7 +56,7 @@ Swal.fire({
     }
   })  };
 
-
+ //Guardar registro en Local Storage
 const guardarLocalStorage = (registro_a_guardar) => {
     if (registroStorage == null) {
         localStorage.setItem("registro", JSON.stringify(registro_a_guardar));    
@@ -63,7 +64,7 @@ const guardarLocalStorage = (registro_a_guardar) => {
         localStorage.setItem("registro", JSON.stringify(registro));
     };
 };
-
+ //Si ya existe storage con datos crea los registros
 if (registroStorage != null) {
     registroStorage = JSON.parse(registroStorage);
     console.log('registroStorage', registroStorage);  

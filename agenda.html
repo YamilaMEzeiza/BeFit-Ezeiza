@@ -12,44 +12,37 @@
   </head>
   <body>
       <!--Inicia Nav-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid" id="botonera">
-        <a class="navbar-brand" href="index.html">Inicio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="agenda.html">Registro de comidas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="calculadora.html">IMC</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
+      <nav class="navbar navbar-expand-lg navbar-light  bg-purple" id="botonera">
+        <div class="container-fluid"> <a class="navbar-brand" href="index.html"> <h1> BeFit!</h1></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-      </div>
-    </nav>
+           
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Tienda</a> </li>
+           <li class="nav-item"> <a class="nav-link active" aria-current="page" href="agenda.html">Registro de comidas</a> </li>
+           <li class="nav-item"> <a class="nav-link active" href="calculadora.html">Calculadora de IMC</a></li>
+       </div>
+     </div>
+   </nav>
   
     <main>
       <div class="bg-green" >
-    <h1> Registro de comidas</h1>
+    <h2> Registro de comidas</h2>
    
     <div id="crearRegistro">
       <div id="nuevoRegistro">
-          <h3>Ingrese fecha y lo que comió</h3>
+          <h3 class="text-center colorTexto">Ingrese fecha y lo que comió</h3>
           <textarea name="registroNuevo" id="registroNuevo" placeholder="Registre sus comidas aqui "></textarea><br>
           <input type="button" value="Agregar registro" id="boton_registro_nuevo" class="botones">
       </div>
 
-      <div id="mostrar_registros">  
-        <h2> Las comidas registradas de <span id='usuarioNombre'> invitado/a</span> son: </h2>
-          <input type="button" value="Borrar todos los registros" id="btnSwal" class="botones" >
-          <div id="registrosGuardados"></div>
+      <div id="mostrar_registros ">  
+        <h2 class="text-center colorTexto"> Las comidas registradas  son: </h2>
+          <div id="registrosGuardados"class="espacioAnotador"></div>
+          <input type="button" value="Borrar todos los registros" id="btnSwal" class=" d-block botones align-items-center" >
       </div>
   </div>
 </div>

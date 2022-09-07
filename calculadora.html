@@ -12,44 +12,41 @@
   </head>
   <body>
       <!--Inicia Nav-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid" id="botonera">
-        <a class="navbar-brand" href="index.html">Inicio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+  <!--Inicia Nav-->
+  <nav class="navbar navbar-expand-lg navbar-light  bg-purple" id="botonera">
+    <div class="container-fluid"> <a class="navbar-brand" href="index.html"> <h1> BeFit!</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="agenda.html">Registro de comidas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="calculadora.html">IMC</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    </div>
+       
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Tienda</a> </li>
+       <li class="nav-item"> <a class="nav-link active" aria-current="page" href="agenda.html">Registro de comidas</a> </li>
+       <li class="nav-item"> <a class="nav-link active" href="calculadora.html">Calculadora de IMC</a></li>
+   </div>
+ </div>
+</nav>
   
     <main>
       
-    <h1> Be fit!</h1>
+    <h2> Calculadora de índice de masa corporal</h2>
     <form class="form-inline calculadoraFormulario">
       <div class="form-group mb-2 formularioFondo">
-        <h2> ¿Querés saber cual es tu indice de masa corporal? ¡Averigualo acá!</h2>
           <form action= "envio.php" method= "post"> 
             <fieldset> 
-              <legend class="calculadora">Calculadora de indice de masa corporal </legend>
-              <label for="peso" class="formulario">Peso </label>
+              <legend class="calculadora colorTexto text-center"> ¿Querés saber cual es tu indice de masa corporal? ¡Averigualo acá! </legend>
+              <label for="peso" class="formulario colorTexto">Peso </label>
               <br>
-              <input type="text"  name= "peso" id= "peso" placeholder= "Ingresá tu peso">
+              <input type="text"  name= "peso" id= "peso" class="formulario" placeholder= "Ingresá tu peso">
               <br>
-              <label for= "altura"class="formulario"> Altura </label> 
+              <label for= "altura"class="formulario text-center colorTexto"> Altura </label> 
               <br>
-              <input type="text" name="altura" id="altura" placeholder="Ingresá tu altura en metros">
+              <input type="text" name="altura" id="altura" class="formulario" placeholder="Ingresá tu altura en metros">
               </fieldset>
               
-      <button type="click" class="btn  btn-primary mb-2"id="btnSwal">Calcular</button>
+      <button type="click" class="btn  btn-primary mt-4 mb-4 d-block botones"id="btnSwal">Calcular</button>
     </form>
     <p>Tu indice de masa corporal es:<span id="calculo">%</span>%</p>
     <p>Resultado:<span id="resultadoFinal">%</span></p> 
